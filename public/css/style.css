@@ -36,6 +36,7 @@
   #form h1{
     font-style: italic;
     text-shadow: 1px 1px darkgray;
+    text-align: center;
   }
   
   #form input{
@@ -92,7 +93,7 @@
     color: black;
   }
   
-  #download-btn{
+  .download-btn{
     width: fit-content;
     color: black;
     padding: 12px;
@@ -109,9 +110,22 @@
     transition: 0.3s ease-out;
   }
   
-  #download-btn:hover{
+  .download-btn:hover{
     color:black;
     background-color:  white;
+    border: 1px solid  lightgray;
+    transform: scale(1.1);
+  }
+
+  #MP4-button{
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+  }
+
+  #MP4-button:hover{
+    color:black;
+    background-color:  lightcoral;
     border: 1px solid  lightgray;
     transform: scale(1.1);
   }

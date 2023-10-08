@@ -24,6 +24,7 @@ app.get("/", (req, res) => {
     res.render("index")
 })
 
+//Convert2MP3
 app.post("/convert-mp3", async (req, res) => {
 
     const videoId = req.body.videoId;
@@ -40,17 +41,27 @@ app.post("/convert-mp3", async (req, res) => {
         "headers": {
           "x-rapidapi-key": process.env.API_KEY,
           "x-rapidapi-host": process.env.API_HOST
+        }
+        });
+        const fetchAPI4 = await fetch(`https://ytstream-download-youtube-videos.p.rapidapi.com/dl?id=${videoId}`, {
+        "method": "GET",
+        "headers": {
+          "x-rapidapi-key": process.env.API_KEY4,
+          "x-rapidapi-host": process.env.API_HOST4
           }
-      });
+        });
   
       const fetchResponse = await fetchAPI.json();
+      const fetchResponse4 = await fetchAPI4.json();
    
-      if(fetchResponse.status === "ok")
-        return res.render("index",{ success : true,  song_title : fetchResponse.title, song_link : fetchResponse.link})
-      else
+      if(fetchResponse.status === "ok"){
+        return res.render("index",{ success : true,  song_title : fetchResponse.title, song_link : fetchResponse.link, song_link4 : fetchResponse4.formats[1].url})
+      }else
         return res.render("index", { success : false, message : fetchResponse.msg});
     }
-  });
+
+});
+
 
 //Start the server
 app.listen(PORT, ()=>{

@@ -14,7 +14,7 @@
 
   <div class="top-container">
     <form action="/convert-mp3" method="POST" id="form">
-      <h1><i class="fab fa-youtube"></i> YouTube 2 MP3 Converter</h1>
+      <h1><i class="fab fa-youtube"></i> Diego's YouTube to MP3 & MP4 Converter</h1>
       <h4>Enter the video ID</h4>
       <div>
         <input type="text" name="videoId" placeholder="Video ID..."><button id="submit-btn">Convert</button>
@@ -26,7 +26,8 @@
     <% if (typeof success != "undefined" && success) { %>
       <div class="success">
         <p> <%= song_title %> </p>
-        <a href="<%= song_link %>"><button id="download-btn">DOWNLOAD</button></a>
+        <a href="<%= song_link %>"><button class="download-btn" id="MP3-button">DOWNLOAD MP3 <i class="fa-solid fa-headphones"></i></button></a>
+        <a href="<%= song_link4 %>"><button class="download-btn" id="MP4-button">DOWNLOAD MP4 <i class="fa-solid fa-video"></i></button></a>
       </div>
     <% } else if (typeof success != "undefined" && !success) { %>
       <div class="errors">
