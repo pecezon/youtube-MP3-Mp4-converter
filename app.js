@@ -24,10 +24,25 @@ app.get("/", (req, res) => {
     res.render("index")
 })
 
+//Funcion convertidora de URL a ID
+function urlId(str) {
+    let startI = str.indexOf('=');
+    let finishI = str.indexOf('&');
+    if (startI < 0) {
+        return str;
+    }
+    if (finishI < 0) {
+        return str.substring(startI+1);
+    }
+    return str.substring(startI+1, finishI);
+}
+console.log(urlId("https://www.youtube.com/watch?v=8PhdfcX9tG0"));
+
+
 //Convert2MP3
 app.post("/convert-mp3", async (req, res) => {
 
-    const videoId = req.body.videoId;
+    const videoId = urlId(req.body.videoId);
     
     if(
       videoId === undefined ||
