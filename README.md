@@ -3,4 +3,4 @@ Following a [YouTube Tutorial](https://youtube.com/playlist?list=PLtMugc7g4Gaq1F
 
 I used NodeJS to develop the app and published it with cyclic
 
-You can use the app using [this link](https://courageous-wetsuit-newt.cyclic.app/convert-mp3)
+You can use the app using [this link](https://youtube2mp3pecezon.cyclic.app/convert-mp3)
